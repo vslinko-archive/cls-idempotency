@@ -8,6 +8,10 @@ function makeClass(base, newProps) {
   var populated;
 
   function constructor(props) {
+    if (!(this instanceof constructor)) {
+      return new constructor(props);
+    }
+
     if (!populated) {
       if (base.extend === extend) {
         // Ensure population of baseProto if base created by makeClass.

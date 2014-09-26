@@ -4,8 +4,9 @@ var Class = require("../main");
 describe("Class", function() {
   it("should have correct instanceof and override behavior", function() {
     var A = Class.extend({
-      init: function(val) {
+      init: function(val, skippedArgument) {
         this.val = val;
+        this.skippedArgument = skippedArgument;
       }
     });
 
@@ -31,13 +32,15 @@ describe("Class", function() {
       }
     });
 
-    var a = new A(3);
+    var a = new A(3, 'skippedArgument');
     var b = new B(3);
     var c = new C(3);
 
     assert.strictEqual(a.val, 3);
     assert.strictEqual(b.val, 4);
     assert.strictEqual(c.val, 5);
+
+    assert.ok(typeof a.skippedArgument === 'undefined');
 
     assert.ok(a instanceof A);
     assert.ok(!(a instanceof B));

@@ -7,7 +7,7 @@ function makeClass(base, newProps) {
   var newStatics = newProps.statics;
   var populated;
 
-  function constructor() {
+  function constructor(props) {
     if (!populated) {
       if (base.extend === extend) {
         // Ensure population of baseProto if base created by makeClass.
@@ -36,7 +36,7 @@ function makeClass(base, newProps) {
     // prototype chain twice.
     var init = this.init;
     if (init) {
-      init.apply(this, arguments);
+      init.call(this, props);
     }
   }
 

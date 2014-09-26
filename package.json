@@ -1,8 +1,9 @@
 {
   "author": "Ben Newman <bn@cs.stanford.edu>",
-  "name": "cls",
+  "name": "cls-idempotency",
   "description": "Class factory featuring inheritance of static properties, static constructors, lazy population of prototypes, and this._super.",
   "keywords": [
+    "idempotency",
     "class",
     "inheritance",
     "static",
@@ -12,10 +13,10 @@
     "extend"
   ],
   "version": "0.1.5",
-  "homepage": "http://github.com/benjamn/cls",
+  "homepage": "http://github.com/vslinko/cls-idempotency",
   "repository": {
     "type": "git",
-    "url": "git://github.com/benjamn/cls.git"
+    "url": "git://github.com/vslinko/cls-idempotency.git"
   },
   "license": "MIT",
   "main": "main.js",

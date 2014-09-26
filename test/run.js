@@ -34,7 +34,7 @@ describe("Class", function() {
 
     var a = new A(3, 'skippedArgument');
     var b = new B(3);
-    var c = C(3);
+    var c = C(C(3));
 
     assert.strictEqual(a.val, 3);
     assert.strictEqual(b.val, 4);
